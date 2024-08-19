@@ -1,6 +1,6 @@
 import {TonConnectButton} from '@tonconnect/ui-react';
 import {useMainContract, useTonConnect} from './hooks/useTonMainContract.ts';
-import {Address, fromNano} from "@ton/core";
+import {fromNano} from "@ton/core";
 
 import {Card, Flex, Button} from "antd";
 
@@ -11,18 +11,15 @@ function App() {
         sendTake,
         contract_address,
         counter_value,
-        recent_sender,
-        owner_address,
         contract_balance
     } = useMainContract();
-    const balance = fromNano(contract_balance ?? 0)
 
     const {connected} = useTonConnect()
 
     return (
         <div className='App'>
             <div className='Container'>
-                <Card title="Contract" bordered={false}  style={{width: 350, marginLeft: 150}}>
+                <Card title="Contract" bordered={false} style={{width: 350, marginLeft: 150}}>
                     <TonConnectButton/>
 
                     <div className='Card'>
