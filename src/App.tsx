@@ -23,7 +23,7 @@ function App() {
 
                     <Flex gap="small" align="flex-start" vertical>
                         <Flex gap="small" wrap>
-                            <a href="https://testnet.tonscan.org/address/"{contract_address}>合约</a>
+                            <a href={"https://testnet.tonscan.org/address/" + contract_address}>合约</a>
                         </Flex>
                     </Flex>
 
