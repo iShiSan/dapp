@@ -1,4 +1,4 @@
-import {StrictMode} from 'react'
+//import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import {TonConnectUIProvider} from "@tonconnect/ui-react"
 import App from './App.tsx'
