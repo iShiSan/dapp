@@ -24,9 +24,6 @@ function App() {
                     <Flex gap="small" align="flex-start" vertical>
                         <Flex gap="small" wrap>
                             <a href="https://testnet.tonscan.org/address/"{contract_address}>合约</a>
-                            {/*{recent_sender && (*/}
-                            {/*    <a href="https://testnet.tonscan.org/address/"{recent_sender.address}>钱包</a>*/}
-                            {/*)}*/}
                         </Flex>
                     </Flex>
 
