@@ -2,6 +2,8 @@ import {TonConnectButton} from '@tonconnect/ui-react';
 import {useMainContract, useTonConnect} from './hooks/useTonMainContract.ts';
 import {Address, fromNano} from "@ton/core";
 
+import {Card, Flex, Button} from "antd";
+
 function App() {
     const {
         sendIncr,
@@ -20,34 +22,39 @@ function App() {
     return (
         <div className='App'>
             <div className='Container'>
-                <TonConnectButton/>
+                <Card style={{width: 350, marginLeft: 150}}>
+                    <TonConnectButton/>
 
-                <div className='Card'>
-                    <b>Counter Address</b>
-                    <div className='Hint'>{contract_address?.slice(0, 30) + '...'}</div>
-                </div>
+                    <div className='Card'>
+                        <b>合约地址</b>
+                        <div className='Hint'>{contract_address?.slice(0, 30) + '...'}</div>
+                    </div>
 
-                <div className='Card'>
-                    <b>Balance</b>
-                    <div>{fromNano(contract_balance ?? 0)} TON</div>
-                </div>
+                    <div className='Card'>
+                        <b>余额</b>
+                        <div>{fromNano(contract_balance ?? 0)} TON</div>
+                    </div>
 
-                <div className='Card'>
-                    <b>Counter Value</b>
-                    <div>{counter_value ?? 'Loading...'}</div>
-                </div>
+                    <div className='Card'>
+                        <b>计数器</b>
+                        <div>{counter_value ?? 'Loading...'}</div>
+                    </div>
 
-                {connected && (
-                    <>
-                        <a onClick={() => sendIncr()}>Incr 5</a>
-                        <a onClick={() => sendSave()}>存入</a>
-                        <a onClick={() => sendTake()}>取出</a>
-                    </>
-                )}
-
+                    {connected && (
+                        <>
+                            <Flex gap="small" align="flex-start" vertical>
+                                <Flex gap="small" wrap>
+                                    <Button type="primary" onClick={() => sendIncr()}>Incr 5</Button>
+                                    <Button type="primary" onClick={() => sendSave()}>存入</Button>
+                                    <Button type="primary" onClick={() => sendTake()}>取出</Button>
+                                </Flex>
+                            </Flex>
+                        </>
+                    )}
+                </Card>
+            </div>
         </div>
-</div>
-)
+    )
 }
 
 export default App
