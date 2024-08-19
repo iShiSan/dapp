@@ -35,7 +35,7 @@ function App() {
 
                     <div className='Card'>
                         <b>合约地址</b>
-                        <div className='Hint'>{contract_address?.slice(0, 30) + '...'}</div>
+                        <div className='Hint'>{contract_address?.slice(0, 30) + '....'}</div>
                     </div>
 
                     <div className='Card'>
