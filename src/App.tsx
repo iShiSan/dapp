@@ -22,7 +22,7 @@ function App() {
     return (
         <div className='App'>
             <div className='Container'>
-                <Card style={{width: 350, marginLeft: 150}}>
+                <Card title="Contract" bordered={false}  style={{width: 350, marginLeft: 150}}>
                     <TonConnectButton/>
 
                     <div className='Card'>
