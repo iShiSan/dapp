@@ -10,6 +10,7 @@ function App() {
         sendSave,
         sendTake,
         contract_address,
+        recent_sender,
         counter_value,
         contract_balance
     } = useMainContract();
@@ -23,7 +24,12 @@ function App() {
 
                     <Flex gap="small" align="flex-start" vertical>
                         <Flex gap="small" wrap>
-                            <a href={"https://testnet.tonscan.org/address/" + contract_address}>合约</a>
+                            <Button type="primary"
+                                    href={"https://testnet.tonscan.org/address/" + contract_address}>合约</Button>
+                            {recent_sender & (
+                                <Button type="primary"
+                                        href={"https://testnet.tonscan.org/address/" + recent_sender.address.toString()}>钱包</Button>
+                            )}
                         </Flex>
                     </Flex>
 
