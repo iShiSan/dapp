@@ -4,7 +4,10 @@ import {fromNano} from "@ton/core";
 
 import {Card, Flex, Button} from "antd";
 
+import WebApp from '@twa-dev/sdk'
+
 function App() {
+
     const {
         sendIncr,
         sendSave,
@@ -17,10 +20,16 @@ function App() {
 
     const {connected} = useTonConnect()
 
+    const showAlert = () => {
+        WebApp.showAlert("Hello!!!")
+    }
+
     return (
         <div className='App'>
             <div className='Container'>
                 <Card title="Contract" bordered={false} style={{width: 350, marginLeft: 150}}>
+
+                    <Button onClick={showAlert}>button</Button>
 
                     <Flex gap="small" align="flex-start" vertical>
                         <Flex gap="small" wrap>
