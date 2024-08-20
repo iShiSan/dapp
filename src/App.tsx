@@ -24,11 +24,11 @@ function App() {
 
                     <Flex gap="small" align="flex-start" vertical>
                         <Flex gap="small" wrap>
-                            <Button type="primary"
+                            <Button type="primary" target="_blank"
                                     href={"https://testnet.tonscan.org/address/" + contract_address}>合约</Button>
-                            {recent_sender & (
-                                <Button type="primary"
-                                        href={"https://testnet.tonscan.org/address/" + recent_sender.address.toString()}>钱包</Button>
+                            {connected && recent_sender && (
+                                <Button type="primary" target="_blank"
+                                        href={"https://testnet.tonscan.org/address/" + recent_sender.toString()}>钱包</Button>
                             )}
                         </Flex>
                     </Flex>
